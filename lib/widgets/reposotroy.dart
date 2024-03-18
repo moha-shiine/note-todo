@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_notesql/models/calssmodel.dart';
+import 'package:flutter_notesql/models/models.dart';
 import 'package:http/http.dart' as http;
 
 class Repostory {

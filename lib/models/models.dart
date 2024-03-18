@@ -1,6 +1,13 @@
+import 'package:hive/hive.dart';
+part 'models.g.dart';
+
+@HiveType(typeId: 0)
 class Notemodel {
+  @HiveField(0)
   List<Data>? data;
+  @HiveField(1)
   Links? links;
+  @HiveField(2)
   Meta? meta;
 
   Notemodel({this.data, this.links, this.meta});
@@ -31,11 +38,17 @@ class Notemodel {
   }
 }
 
+@HiveType(typeId: 1)
 class Data {
+  @HiveField(0)
   int? id;
+  @HiveField(1)
   User? user;
+  @HiveField(2)
   String? title;
+  @HiveField(3)
   String? description;
+  @HiveField(4)
   String? createdAt;
 
   Data({this.id, this.user, this.title, this.description, this.createdAt});
@@ -61,8 +74,11 @@ class Data {
   }
 }
 
+@HiveType(typeId: 2)
 class User {
+  @HiveField(0)
   int? id;
+  @HiveField(1)
   String? name;
 
   User({this.id, this.name});
@@ -80,10 +96,15 @@ class User {
   }
 }
 
+@HiveType(typeId: 3)
 class Links {
+  @HiveField(0)
   String? first;
+  @HiveField(1)
   String? last;
+  @HiveField(2)
   dynamic prev;
+  @HiveField(3)
   dynamic next;
 
   Links({this.first, this.last, this.prev, this.next});
@@ -105,14 +126,23 @@ class Links {
   }
 }
 
+@HiveType(typeId: 4)
 class Meta {
+  @HiveField(0)
   int? currentPage;
+  @HiveField(1)
   int? from;
+  @HiveField(2)
   int? lastPage;
+  @HiveField(3)
   List<Links>? links;
+  @HiveField(4)
   String? path;
+  @HiveField(5)
   int? perPage;
+  @HiveField(6)
   int? to;
+  @HiveField(7)
   int? total;
 
   Meta(
